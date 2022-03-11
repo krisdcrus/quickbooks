@@ -1,0 +1,807 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "QB",
+    "description": "QB"
+  },
+  "host": "sandbox-quickbooks.api.intuit.com",
+  "basePath": "/",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v3/company/{companyid}/item/{itemid}": {
+      "get": {
+        "summary": "Item-ReadById",
+        "description": "Item-ReadById",
+        "operationId": "Item-ReadById",
+        "parameters": [
+          {
+            "name": "companyid",
+            "default": "{{companyid}}",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "itemid",
+            "default": "{{itemid}}",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "minorversion",
+            "default": "8",
+            "in": "query",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "User-Agent",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "default": "{{UserAgent}}",
+            "description": "User-Agent"
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "default": "application/json",
+            "description": "Accept"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {}
+          }
+        }
+      }
+    },
+    "/v3/company/{companyid}/invoice/{invoiceId}/send": {
+      "post": {
+        "summary": "Invoice-Send",
+        "description": "Invoice-Send",
+        "operationId": "Invoice-Send",
+        "parameters": [
+          {
+            "name": "companyid",
+            "default": "{{companyid}}",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "invoiceId",
+            "default": "{{invoiceId}}",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "sendTo",
+            "default": "{{emailAddr}}",
+            "in": "query",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "Content-type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "default": "application/octet-stream",
+            "description": "Content-type"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {}
+          }
+        }
+      }
+    },
+    "/v3/company/{companyid}/item": {
+      "post": {
+        "summary": "Item-Create",
+        "description": "Item-Create",
+        "operationId": "Item-Create",
+        "parameters": [
+          {
+            "name": "companyid",
+            "default": "{{companyid}}",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "minorversion",
+            "default": "8",
+            "in": "query",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "User-Agent",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "default": "{{UserAgent}}",
+            "description": "User-Agent"
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "default": "application/json",
+            "description": "Accept"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "default": "application/json",
+            "description": "Content-Type"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "Name": {
+                  "type": "string",
+                  "description": "Name"
+                },
+                "Sku": {
+                  "type": "string",
+                  "description": "Sku"
+                },
+                "Description": {
+                  "type": "string",
+                  "description": "Description"
+                },
+                "UnitPrice": {
+                  "type": "string",
+                  "description": "UnitPrice"
+                },
+                "PurchaseCost": {
+                  "type": "string",
+                  "description": "PurchaseCost"
+                },
+                "Taxable": {
+                  "type": "boolean",
+                  "description": "Taxable"
+                },
+                "IncomeAccountRef": {
+                  "type": "object",
+                  "properties": {
+                    "value": {
+                      "type": "string",
+                      "description": "value"
+                    },
+                    "name": {
+                      "type": "string",
+                      "description": "name"
+                    }
+                  },
+                  "description": "IncomeAccountRef"
+                },
+                "ExpenseAccountRef": {
+                  "type": "object",
+                  "properties": {
+                    "value": {
+                      "type": "string",
+                      "description": "value"
+                    },
+                    "name": {
+                      "type": "string",
+                      "description": "name"
+                    }
+                  },
+                  "description": "ExpenseAccountRef"
+                },
+                "AssetAccountRef": {
+                  "type": "object",
+                  "properties": {
+                    "value": {
+                      "type": "string",
+                      "description": "value"
+                    },
+                    "name": {
+                      "type": "string",
+                      "description": "name"
+                    }
+                  },
+                  "description": "AssetAccountRef"
+                },
+                "Type": {
+                  "type": "string",
+                  "description": "Type"
+                },
+                "TrackQtyOnHand": {
+                  "type": "boolean",
+                  "description": "TrackQtyOnHand"
+                },
+                "QtyOnHand": {
+                  "type": "string",
+                  "description": "QtyOnHand"
+                },
+                "InvStartDate": {
+                  "type": "string",
+                  "description": "InvStartDate"
+                }
+              },
+              "default": {
+                "Name": "Test Item323",
+                "Sku": "123-abcdef-grd",
+                "Description": "Testin123",
+                "UnitPrice": "300",
+                "PurchaseCost": "100",
+                "Taxable": false,
+                "IncomeAccountRef": {
+                  "value": "79",
+                  "name": "Sales of Product Income"
+                },
+                "ExpenseAccountRef": {
+                  "value": "80",
+                  "name": "Cost of Goods Sold"
+                },
+                "AssetAccountRef": {
+                  "value": "81",
+                  "name": "Inventory Asset"
+                },
+                "Type": "Inventory",
+                "TrackQtyOnHand": true,
+                "QtyOnHand": "1000",
+                "InvStartDate": "2015-01-01"
+              }
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {}
+          }
+        }
+      }
+    },
+    "/v3/company/{companyid}/invoice": {
+      "post": {
+        "summary": "Invoice-Create",
+        "description": "Invoice-Create",
+        "operationId": "Invoice-Create",
+        "parameters": [
+          {
+            "name": "companyid",
+            "default": "{{companyid}}",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "minorversion",
+            "default": "{{minorversion}}",
+            "in": "query",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "User-Agent",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "default": "{{UserAgent}}",
+            "description": "User-Agent"
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "default": "application/json",
+            "description": "Accept"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "default": "application/json",
+            "description": "Content-Type"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "Line": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "Amount": {
+                        "type": "string",
+                        "description": "Amount"
+                      },
+                      "DetailType": {
+                        "type": "string",
+                        "description": "DetailType"
+                      },
+                      "SalesItemLineDetail": {
+                        "type": "object",
+                        "properties": {
+                          "ItemRef": {
+                            "type": "object",
+                            "properties": {
+                              "value": {
+                                "type": "string",
+                                "description": "value"
+                              },
+                              "name": {
+                                "type": "string",
+                                "description": "name"
+                              }
+                            },
+                            "description": "ItemRef"
+                          }
+                        },
+                        "description": "SalesItemLineDetail"
+                      }
+                    }
+                  },
+                  "description": "Line"
+                },
+                "CustomerRef": {
+                  "type": "object",
+                  "properties": {
+                    "value": {
+                      "type": "string",
+                      "description": "value"
+                    }
+                  },
+                  "description": "CustomerRef"
+                },
+                "DocNumber": {
+                  "type": "string",
+                  "description": "DocNumber"
+                }
+              },
+              "default": {
+                "Line": [
+                  {
+                    "Amount": 52000,
+                    "DetailType": "SalesItemLineDetail",
+                    "Description": "Test1",
+                    "SalesItemLineDetail": {
+                      "ItemRef": {
+                        "value": "1"
+                      },
+                      "Qty": 1,
+                      "UnitPrice": 52000
+                    }
+                  }
+                ],
+                "CustomerRef": {
+                  "value": "1"
+                },
+                "DocNumber": "1020-ABC-XY23"
+              }
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {}
+          }
+        }
+      }
+    },
+    "/v3/company/{companyid}/invoice/{invoiceId}": {
+      "get": {
+        "summary": "Invoice-ReadById",
+        "description": "Invoice-ReadById",
+        "operationId": "Invoice-ReadById",
+        "parameters": [
+          {
+            "name": "companyid",
+            "default": "{{companyid}}",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "invoiceId",
+            "default": "{{invoiceId}}",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "minorversion",
+            "default": "8",
+            "in": "query",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "User-Agent",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "default": "{{UserAgent}}",
+            "description": "User-Agent"
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "default": "application/json",
+            "description": "Accept"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {}
+          }
+        }
+      }
+    },
+    "/v3/company/{companyid}/customer/{customerId}": {
+      "get": {
+        "summary": "Customer-ReadById",
+        "description": "Customer-ReadById",
+        "operationId": "Customer-ReadById",
+        "parameters": [
+          {
+            "name": "companyid",
+            "default": "{{companyid}}",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "customerId",
+            "default": "{{customerId}}",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "minorversion",
+            "default": "{{minorversion}}",
+            "in": "query",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "User-Agent",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "default": "{{UserAgent}}",
+            "description": "User-Agent"
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "default": "application/json",
+            "description": "Accept"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {}
+          }
+        }
+      }
+    },
+    "/v3/company/{companyid}/customer": {
+      "post": {
+        "summary": "Customer-Create",
+        "description": "Customer-Create",
+        "operationId": "Customer-Create",
+        "parameters": [
+          {
+            "name": "companyid",
+            "default": "{{companyid}}",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "minorversion",
+            "default": "{{minorversion}}",
+            "in": "query",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "User-Agent",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "default": "{{UserAgent}}",
+            "description": "User-Agent"
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "default": "application/json",
+            "description": "Accept"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "default": "application/json",
+            "description": "Content-Type"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "BillAddr": {
+                  "type": "object",
+                  "properties": {
+                    "Line1": {
+                      "type": "string",
+                      "description": "Line1"
+                    },
+                    "City": {
+                      "type": "string",
+                      "description": "City"
+                    },
+                    "Country": {
+                      "type": "string",
+                      "description": "Country"
+                    },
+                    "CountrySubDivisionCode": {
+                      "type": "string",
+                      "description": "CountrySubDivisionCode"
+                    },
+                    "PostalCode": {
+                      "type": "string",
+                      "description": "PostalCode"
+                    }
+                  },
+                  "description": "BillAddr"
+                },
+                "Notes": {
+                  "type": "string",
+                  "description": "Notes"
+                },
+                "DisplayName": {
+                  "type": "string",
+                  "description": "DisplayName"
+                },
+                "PrimaryPhone": {
+                  "type": "object",
+                  "properties": {
+                    "FreeFormNumber": {
+                      "type": "string",
+                      "description": "FreeFormNumber"
+                    }
+                  },
+                  "description": "PrimaryPhone"
+                },
+                "PrimaryEmailAddr": {
+                  "type": "object",
+                  "properties": {
+                    "Address": {
+                      "type": "string",
+                      "description": "Address"
+                    }
+                  },
+                  "description": "PrimaryEmailAddr"
+                }
+              },
+              "default": {
+                "BillAddr": {
+                  "Line1": "123 Main Street",
+                  "City": "Mountain View",
+                  "Country": "USA",
+                  "CountrySubDivisionCode": "CA",
+                  "PostalCode": "94042"
+                },
+                "Notes": "Here are other details.",
+                "DisplayName": "King's Groceries1",
+                "PrimaryPhone": {
+                  "FreeFormNumber": "(555) 555-5555"
+                },
+                "PrimaryEmailAddr": {
+                  "Address": "jdrew@myemail.com"
+                }
+              }
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {}
+          }
+        }
+      }
+    },
+    "/v3/company/{companyid}/payment": {
+      "post": {
+        "summary": "Payment-Create",
+        "description": "Payment-Create",
+        "operationId": "Payment-Create",
+        "parameters": [
+          {
+            "name": "companyid",
+            "default": "{{companyid}}",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "minorversion",
+            "default": "8",
+            "in": "query",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "User-Agent",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "default": "{{UserAgent}}",
+            "description": "User-Agent"
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "default": "application/json",
+            "description": "Accept"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "default": "application/json",
+            "description": "Content-Type"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "CustomerRef": {
+                  "type": "object",
+                  "properties": {
+                    "value": {
+                      "type": "string",
+                      "description": "value"
+                    },
+                    "name": {
+                      "type": "string",
+                      "description": "name"
+                    }
+                  },
+                  "description": "CustomerRef"
+                },
+                "TotalAmt": {
+                  "type": "string",
+                  "description": "TotalAmt"
+                },
+                "Line": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "Amount": {
+                        "type": "string",
+                        "description": "Amount"
+                      },
+                      "LinkedTxn": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "TxnId": {
+                              "type": "string",
+                              "description": "TxnId"
+                            },
+                            "TxnType": {
+                              "type": "string",
+                              "description": "TxnType"
+                            }
+                          }
+                        },
+                        "description": "LinkedTxn"
+                      }
+                    }
+                  },
+                  "description": "Line"
+                }
+              },
+              "default": {
+                "CustomerRef": {
+                  "value": "58",
+                  "name": "TEST123"
+                },
+                "TotalAmt": "100",
+                "Line": [
+                  {
+                    "Amount": "100",
+                    "LinkedTxn": [
+                      {
+                        "TxnId": "173",
+                        "TxnType": "Invoice"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {}
+          }
+        }
+      }
+    }
+  },
+  "definitions": {},
+  "parameters": {},
+  "responses": {},
+  "securityDefinitions": {
+    "oauth2_auth": {
+      "type": "oauth2",
+      "flow": "accessCode",
+      "authorizationUrl": "https://appcenter.intuit.com/connect/oauth2",
+      "tokenUrl": "https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer",
+      "scopes": {
+        "com.intuit.quickbooks.accounting": "com.intuit.quickbooks.accounting"
+      }
+    }
+  },
+  "security": [
+    {
+      "oauth2_auth": [
+        "com.intuit.quickbooks.accounting"
+      ]
+    }
+  ],
+  "tags": []
+}

@@ -1,0 +1,116 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "QB-Internal",
+    "description": "QB-Internal"
+  },
+  "host": "sandbox-quickbooks.api.intuit.com",
+  "basePath": "/",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v3/company/{companyid}/invoice": {
+      "post": {
+        "summary": "Invoice-Delete",
+        "description": "Invoice-Delete",
+        "operationId": "Invoice-Delete",
+        "parameters": [
+          {
+            "name": "companyid",
+            "default": "{{companyid}}",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "operation",
+            "default": "delete",
+            "in": "query",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "User-Agent",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "default": "{{UserAgent}}",
+            "description": "User-Agent"
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "default": "application/json",
+            "description": "Accept"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "default": "application/json",
+            "description": "Content-Type"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "Id": {
+                  "type": "string",
+                  "description": "Id"
+                },
+                "SyncToken": {
+                  "type": "string",
+                  "description": "SyncToken"
+                }
+              },
+              "default": {
+                "Id": "130",
+                "SyncToken": "10"
+              }
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {}
+          }
+        }
+      }
+    }
+  },
+  "definitions": {},
+  "parameters": {},
+  "responses": {},
+  "securityDefinitions": {
+    "oauth2_auth": {
+      "type": "oauth2",
+      "flow": "accessCode",
+      "authorizationUrl": "https://appcenter.intuit.com/connect/oauth2",
+      "tokenUrl": "https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer",
+      "scopes": {
+        "com.intuit.quickbooks.accounting": "com.intuit.quickbooks.accounting"
+      }
+    }
+  },
+  "security": [
+    {
+      "oauth2_auth": [
+        "com.intuit.quickbooks.accounting"
+      ]
+    }
+  ],
+  "tags": []
+}

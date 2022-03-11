@@ -1,0 +1,562 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "QB-Internal",
+    "description": "QB-Internal"
+  },
+  "host": "sandbox-quickbooks.api.intuit.com",
+  "basePath": "/",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v3/company/{companyid}/item": {
+      "post": {
+        "summary": "Item-Update",
+        "description": "Item-Update",
+        "operationId": "Item-Update",
+        "parameters": [
+          {
+            "name": "companyid",
+            "default": "{{companyid}}",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "minorversion",
+            "default": "8",
+            "in": "query",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "User-Agent",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "default": "{{UserAgent}}",
+            "description": "User-Agent"
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "default": "application/json",
+            "description": "Accept"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "default": "application/json",
+            "description": "Content-Type"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "Name": {
+                  "type": "string",
+                  "description": "Name"
+                },
+                "Sku": {
+                  "type": "string",
+                  "description": "Sku"
+                },
+                "Description": {
+                  "type": "string",
+                  "description": "Description"
+                },
+                "UnitPrice": {
+                  "type": "string",
+                  "description": "UnitPrice"
+                },
+                "PurchaseCost": {
+                  "type": "string",
+                  "description": "PurchaseCost"
+                },
+                "Active": {
+                  "type": "boolean",
+                  "description": "Active"
+                },
+                "FullyQualifiedName": {
+                  "type": "string",
+                  "description": "FullyQualifiedName"
+                },
+                "Taxable": {
+                  "type": "boolean",
+                  "description": "Taxable"
+                },
+                "Type": {
+                  "type": "string",
+                  "description": "Type"
+                },
+                "IncomeAccountRef": {
+                  "type": "object",
+                  "properties": {
+                    "value": {
+                      "type": "string",
+                      "description": "value"
+                    },
+                    "name": {
+                      "type": "string",
+                      "description": "name"
+                    }
+                  },
+                  "description": "IncomeAccountRef"
+                },
+                "ExpenseAccountRef": {
+                  "type": "object",
+                  "properties": {
+                    "value": {
+                      "type": "string",
+                      "description": "value"
+                    },
+                    "name": {
+                      "type": "string",
+                      "description": "name"
+                    }
+                  },
+                  "description": "ExpenseAccountRef"
+                },
+                "AssetAccountRef": {
+                  "type": "object",
+                  "properties": {
+                    "value": {
+                      "type": "string",
+                      "description": "value"
+                    },
+                    "name": {
+                      "type": "string",
+                      "description": "name"
+                    }
+                  },
+                  "description": "AssetAccountRef"
+                },
+                "TrackQtyOnHand": {
+                  "type": "boolean",
+                  "description": "TrackQtyOnHand"
+                },
+                "QtyOnHand": {
+                  "type": "string",
+                  "description": "QtyOnHand"
+                },
+                "Id": {
+                  "type": "string",
+                  "description": "Id"
+                },
+                "SyncToken": {
+                  "type": "string",
+                  "description": "SyncToken"
+                }
+              },
+              "default": {
+                "Name": "Garden Supplies-Updated",
+                "Sku": "bla-bla",
+                "Description": "Testin123",
+                "UnitPrice": "300",
+                "PurchaseCost": "100",
+                "Active": true,
+                "FullyQualifiedName": "Garden Supplies-Updated",
+                "Taxable": false,
+                "Type": "Inventory",
+                "IncomeAccountRef": {
+                  "value": "79",
+                  "name": "Sales of Product Income"
+                },
+                "ExpenseAccountRef": {
+                  "value": "80",
+                  "name": "Cost of Goods Sold"
+                },
+                "AssetAccountRef": {
+                  "value": "81",
+                  "name": "Inventory Asset"
+                },
+                "TrackQtyOnHand": true,
+                "QtyOnHand": "1001",
+                "Id": "164",
+                "SyncToken": "2"
+              }
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {}
+          }
+        }
+      }
+    },
+    "/v3/company/{companyid}/customer": {
+      "post": {
+        "summary": "Customer-Update",
+        "description": "Customer-Update",
+        "operationId": "Customer-Update",
+        "parameters": [
+          {
+            "name": "companyid",
+            "default": "{{companyid}}",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "minorversion",
+            "default": "4",
+            "in": "query",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "User-Agent",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "default": "{{UserAgent}}",
+            "description": "User-Agent"
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "default": "application/json",
+            "description": "Accept"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "default": "application/json",
+            "description": "Content-Type"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "Taxable": {
+                  "type": "boolean",
+                  "description": "Taxable"
+                },
+                "BillAddr": {
+                  "type": "object",
+                  "properties": {
+                    "Line1": {
+                      "type": "string",
+                      "description": "Line1"
+                    },
+                    "City": {
+                      "type": "string",
+                      "description": "City"
+                    },
+                    "Country": {
+                      "type": "string",
+                      "description": "Country"
+                    },
+                    "CountrySubDivisionCode": {
+                      "type": "string",
+                      "description": "CountrySubDivisionCode"
+                    },
+                    "PostalCode": {
+                      "type": "string",
+                      "description": "PostalCode"
+                    }
+                  },
+                  "description": "BillAddr"
+                },
+                "Notes": {
+                  "type": "string",
+                  "description": "Notes"
+                },
+                "Job": {
+                  "type": "boolean",
+                  "description": "Job"
+                },
+                "Id": {
+                  "type": "string",
+                  "description": "Id"
+                },
+                "SyncToken": {
+                  "type": "string",
+                  "description": "SyncToken"
+                },
+                "FullyQualifiedName": {
+                  "type": "string",
+                  "description": "FullyQualifiedName"
+                },
+                "DisplayName": {
+                  "type": "string",
+                  "description": "DisplayName"
+                },
+                "PrintOnCheckName": {
+                  "type": "string",
+                  "description": "PrintOnCheckName"
+                },
+                "Active": {
+                  "type": "boolean",
+                  "description": "Active"
+                },
+                "PrimaryPhone": {
+                  "type": "object",
+                  "properties": {
+                    "FreeFormNumber": {
+                      "type": "string",
+                      "description": "FreeFormNumber"
+                    }
+                  },
+                  "description": "PrimaryPhone"
+                },
+                "PrimaryEmailAddr": {
+                  "type": "object",
+                  "properties": {
+                    "Address": {
+                      "type": "string",
+                      "description": "Address"
+                    }
+                  },
+                  "description": "PrimaryEmailAddr"
+                }
+              },
+              "default": {
+                "Taxable": true,
+                "BillAddr": {
+                  "Line1": "123 Main Street",
+                  "City": "Mountain View",
+                  "Country": "USA",
+                  "CountrySubDivisionCode": "CA",
+                  "PostalCode": "94042"
+                },
+                "Notes": "Here are other details.",
+                "Job": false,
+                "Id": "93",
+                "SyncToken": "2",
+                "FullyQualifiedName": "King's Groceries-Updated",
+                "DisplayName": "King's Groceries-Updated",
+                "PrintOnCheckName": "King's Groceries-Updated",
+                "Active": true,
+                "PrimaryPhone": {
+                  "FreeFormNumber": "(555) 111-1111"
+                },
+                "PrimaryEmailAddr": {
+                  "Address": "jdrdsadsdasew@myemail.com"
+                }
+              }
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {}
+          }
+        }
+      }
+    },
+    "/v3/company/{companyid}/invoice": {
+      "post": {
+        "summary": "Invoice-Update",
+        "description": "Invoice-Update",
+        "operationId": "Invoice-Update",
+        "parameters": [
+          {
+            "name": "companyid",
+            "default": "{{companyid}}",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "minorversion",
+            "default": "8",
+            "in": "query",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "User-Agent",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "default": "{{UserAgent}}",
+            "description": "User-Agent"
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "default": "application/json",
+            "description": "Accept"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "default": "application/json",
+            "description": "Content-Type"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "Id": {
+                  "type": "string",
+                  "description": "Id"
+                },
+                "SyncToken": {
+                  "type": "string",
+                  "description": "SyncToken"
+                },
+                "Line": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "Id": {
+                        "type": "string",
+                        "description": "Id"
+                      },
+                      "LineNum": {
+                        "type": "string",
+                        "description": "LineNum"
+                      },
+                      "Amount": {
+                        "type": "string",
+                        "description": "Amount"
+                      },
+                      "DetailType": {
+                        "type": "string",
+                        "description": "DetailType"
+                      },
+                      "SalesItemLineDetail": {
+                        "type": "object",
+                        "properties": {
+                          "ItemRef": {
+                            "type": "object",
+                            "properties": {
+                              "value": {
+                                "type": "string",
+                                "description": "value"
+                              },
+                              "name": {
+                                "type": "string",
+                                "description": "name"
+                              }
+                            },
+                            "description": "ItemRef"
+                          }
+                        },
+                        "description": "SalesItemLineDetail"
+                      },
+                      "SubTotalLineDetail": {
+                        "type": "object",
+                        "properties": {},
+                        "description": "SubTotalLineDetail"
+                      }
+                    }
+                  },
+                  "description": "Line"
+                },
+                "CustomerRef": {
+                  "type": "object",
+                  "properties": {
+                    "value": {
+                      "type": "string",
+                      "description": "value"
+                    },
+                    "name": {
+                      "type": "string",
+                      "description": "name"
+                    }
+                  },
+                  "description": "CustomerRef"
+                },
+                "EmailStatus": {
+                  "type": "string",
+                  "description": "EmailStatus"
+                }
+              },
+              "default": {
+                "Id": "69",
+                "SyncToken": "0",
+                "Line": [
+                  {
+                    "Id": "1",
+                    "LineNum": 1,
+                    "Amount": 100,
+                    "DetailType": "SubTotalLineDetail",
+                    "SalesItemLineDetail": {
+                      "ItemRef": {
+                        "value": "1",
+                        "name": "Services"
+                      }
+                    },
+                    "SubTotalLineDetail": {}
+                  },
+                  {
+                    "Amount": 100,
+                    "DetailType": "SubTotalLineDetail",
+                    "SubTotalLineDetail": {}
+                  }
+                ],
+                "CustomerRef": {
+                  "value": "1",
+                  "name": "Amy's Bird Sanctuary"
+                },
+                "EmailStatus": "EmailSent"
+              }
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {}
+          }
+        }
+      }
+    }
+  },
+  "definitions": {},
+  "parameters": {},
+  "responses": {},
+  "securityDefinitions": {
+    "oauth2_auth": {
+      "type": "oauth2",
+      "flow": "accessCode",
+      "authorizationUrl": "https://appcenter.intuit.com/connect/oauth2",
+      "tokenUrl": "https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer",
+      "scopes": {
+        "com.intuit.quickbooks.accounting": "com.intuit.quickbooks.accounting"
+      }
+    }
+  },
+  "security": [
+    {
+      "oauth2_auth": [
+        "com.intuit.quickbooks.accounting"
+      ]
+    }
+  ],
+  "tags": []
+}
